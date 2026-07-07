@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>The HR Technology Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F6F3EC; --navy:#14213D; --teal:#1F5C57;
+  --gold:#B8894A; --gold-lt:#D9BB86; --slate:#3D4451;
+  --border:#E4DECF; --white:#FFFFFF; --muted:#6B7280;
+  --tag-bg:#EAF0EE; --stat-bg:#B9C2CE;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;}
+::selection{background:var(--gold);color:var(--cream);}
+.serif{font-family:'Source Serif 4',serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+/* ── REVEAL ANIMATION ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal[data-delay="80"]{transition-delay:80ms;}
+.reveal[data-delay="160"]{transition-delay:160ms;}
+.reveal[data-delay="240"]{transition-delay:240ms;}
+.reveal[data-delay="320"]{transition-delay:320ms;}
+.reveal[data-delay="150"]{transition-delay:150ms;}
+.reveal[data-delay="90"]{transition-delay:90ms;}
+.reveal[data-delay="180"]{transition-delay:180ms;}
+.reveal[data-delay="270"]{transition-delay:270ms;}
+.reveal[data-delay="360"]{transition-delay:360ms;}
+
+/* ── MASTHEAD ── */
+.masthead{border-bottom:3px solid var(--navy);background:var(--cream);position:sticky;top:0;z-index:20;}
+.masthead-inner{max-width:1080px;margin:0 auto;padding:18px 28px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.masthead h1{font-family:'Source Serif 4',serif;font-size:clamp(26px,5vw,42px);font-weight:600;color:var(--navy);letter-spacing:-.01em;line-height:1.1;}
+.progress-track{height:2px;background:#E4DECF;overflow:hidden;}
+.progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--teal));transition:width 1.6s cubic-bezier(.22,.61,.36,1);}
+
+/* ── WRAP ── */
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+/* ── EYEBROW ── */
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.eyebrow-rule{width:28px;height:2px;background:var(--gold);flex-shrink:0;}
+.eyebrow-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+
+/* ── HERO ── */
+.hero-section{padding:48px 0 0;}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;}
+.hero-lead{font-family:'Source Serif 4',serif;font-size:clamp(18px,2.4vw,23px);line-height:1.5;color:var(--navy);margin-bottom:18px;font-weight:500;}
+.hero-body{font-size:15.5px;line-height:1.75;color:var(--slate);}
+.hero-body + .hero-body{margin-top:14px;}
+.hero-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 50px rgba(20,33,61,.14);}
+.hero-img-wrap img{width:100%;display:block;}
+
+/* ── INDIA BLOCK ── */
+.india-section{padding:56px 0 0;}
+.india-block{background:var(--navy);border-radius:8px;padding:36px 32px;color:var(--cream);}
+.india-block .eyebrow-label{color:var(--gold);}
+.india-intro{font-family:'Source Serif 4',serif;font-size:clamp(16px,2vw,19px);line-height:1.6;color:#F0EDE4;max-width:760px;margin-bottom:24px;}
+.india-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;border-top:1px solid rgba(246,243,236,.18);padding-top:24px;}
+.india-stat-num{font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:600;color:var(--gold-lt);}
+.india-stat-label{font-size:13px;color:var(--stat-bg);margin-top:4px;}
+
+/* ── TECH CARDS ── */
+.tech-section{padding:56px 0 0;}
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;}
+.tech-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:22px 18px;height:100%;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s ease;}
+.tech-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(20,33,61,.12);}
+.tech-card svg{display:block;}
+.tech-card-label{font-size:14px;font-weight:600;color:var(--navy);margin-top:14px;line-height:1.4;}
+
+/* ── ECOSYSTEM IMG ── */
+.eco-section{padding:56px 0 0;}
+.eco-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--border);}
+.eco-img-wrap img{width:100%;display:block;}
+
+/* ── PLATFORMS ── */
+.platforms-section{padding:56px 0 0;}
+.platform-row{display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:start;padding:30px 0;border-top:1px solid var(--border);}
+.platform-num{font-family:'IBM Plex Mono',monospace;font-size:28px;color:#D8C39C;font-weight:600;}
+.platform-header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.platform-name{font-family:'Source Serif 4',serif;font-size:21px;color:var(--navy);font-weight:600;}
+.platform-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:var(--tag-bg);padding:3px 8px;border-radius:3px;}
+.platform-text{font-size:15px;line-height:1.7;color:var(--slate);}
+
+/* ── CASE STUDIES ── */
+.cases-section{padding:64px 0 0;}
+.cases-intro{font-family:'Source Serif 4',serif;font-size:20px;color:var(--navy);margin:0 0 32px;font-weight:500;max-width:700px;}
+.case-list{display:flex;flex-direction:column;gap:24px;}
+.case-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:32px;}
+.case-header{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap;}
+.case-icon{flex-shrink:0;}
+.case-name{font-family:'Source Serif 4',serif;font-size:20px;color:var(--navy);}
+.case-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;}
+.case-text{font-size:15px;line-height:1.7;color:var(--slate);}
+.case-section-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9AA0AB;margin-top:26px;padding-top:22px;border-top:1px solid var(--border);}
+
+/* stats grid */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px;margin-top:14px;}
+.stat-num{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:600;color:var(--navy);}
+.stat-label{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.4;}
+
+/* checklist */
+.checklist{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px 24px;}
+.checklist li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate);line-height:1.5;}
+.check-icon{flex-shrink:0;margin-top:2px;}
+
+/* agent list */
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:16px;}
+.agent-item{display:flex;gap:10px;align-items:flex-start;}
+.agent-name{font-size:13.5px;font-weight:600;color:var(--navy);}
+.agent-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-top:2px;}
+
+/* insights note */
+.insight-note{font-size:13.5px;color:var(--muted);margin-top:18px;line-height:1.6;font-style:italic;}
+
+/* ── REF LINKS ── */
+sup a,.ref-link{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal);font-size:11px;}
+sup a:hover,.ref-link:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ── FOOTER / REFERENCES ── */
+.footer-section{max-width:1080px;margin:0 auto;padding:64px 28px 48px;}
+.footer-divider{border-top:2px solid var(--navy);padding-top:22px;}
+.refs-heading{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.refs-list{list-style:none;font-size:12.5px;color:var(--muted);line-height:1.9;}
+.refs-list li{display:flex;gap:10px;margin-bottom:6px;}
+.ref-num{font-family:'IBM Plex Mono',monospace;color:var(--gold);flex-shrink:0;}
+.ref-src-link{color:var(--teal);border-bottom:1px solid var(--teal);}
+.ref-src-link:hover{color:var(--gold);border-color:var(--gold);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;}
+  .india-stats{grid-template-columns:1fr 1fr;}
+  .masthead-inner{padding:14px 16px;}
+  .wrap{padding:0 16px;}
+  .india-block{padding:24px 20px;}
+  .footer-section{padding:40px 16px 32px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.progress-bar,.tech-card{transition:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ MASTHEAD ══ -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1 class="serif">The HR Technology Briefing</h1>
+  </div>
+  <div class="progress-track">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero-section wrap">
+  <div class="hero-grid">
+    <div class="reveal">
+      <p class="hero-lead serif">
+        Across the world, HR teams are redesigning how work gets done as artificial intelligence
+        moves from automating routine tasks to becoming a genuine partner in decision-making.
+      </p>
+      <p class="hero-body">
+        Organizations are moving beyond using AI simply to automate routine work. Instead, they
+        are redesigning work so that people and AI collaborate more effectively, improving
+        decision-making, adaptability, and overall workforce performance.
+        <sup><a href="#ref-1">[1]</a></sup>
+      </p>
+      <p class="hero-body">
+        According to Deloitte's 2026 Global Human Capital Trends report,
+        <strong>7 in 10 business leaders identify speed and agility</strong> as their primary
+        competitive strategy over the next three years. The focus is shifting toward human-AI
+        collaboration, continuous learning, and building workforces that respond quickly to
+        changing business needs.
+        <sup><a href="#ref-1">[1]</a></sup>
+      </p>
+    </div>
+    <div class="reveal" data-delay="150">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80"
+             alt="Modern enterprise workspace with people collaborating"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDIA PERSPECTIVE ══ -->
+<section class="india-section wrap">
+  <div class="reveal">
+    <div class="india-block">
+      <div class="eyebrow">
+        <span class="eyebrow-rule"></span>
+        <span class="eyebrow-label">The Indian Perspective</span>
+      </div>
+      <p class="india-intro serif">
+        India is emerging as a key driver of this transformation. Global Capability Centres are
+        rewriting their hiring strategies to prioritize AI expertise, cybersecurity skills, and
+        continuous upskilling over traditional hiring routes.
+        <sup><a href="#ref-2" style="color:var(--gold-lt);border-color:var(--gold-lt)">[2]</a></sup>
+      </p>
+      <div class="india-stats">
+        <div>
+          <div class="india-stat-num" data-countup="2117" data-suffix="">0</div>
+          <div class="india-stat-label">GCCs operating in India, FY2026</div>
+        </div>
+        <div>
+          <div class="india-stat-num" data-countup="2.36" data-suffix="M" data-decimal="true">0</div>
+          <div class="india-stat-label">professionals employed</div>
+        </div>
+        <div>
+          <div class="india-stat-num" data-countup="70" data-suffix="%">0</div>
+          <div class="india-stat-label">of leaders prioritize speed &amp; agility</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TECHNOLOGIES ══ -->
+<section class="tech-section wrap">
+  <div class="reveal">
+    <div class="eyebrow">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Technologies Driving the Change</span>
+    </div>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card reveal" data-delay="80">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3z"/></svg>
+      <div class="tech-card-label">AI-powered Talent Intelligence</div>
+    </div>
+    <div class="tech-card reveal" data-delay="160">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+      <div class="tech-card-label">Cloud ERP &amp; HCM Systems</div>
+    </div>
+    <div class="tech-card reveal" data-delay="240">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <div class="tech-card-label">People Analytics</div>
+    </div>
+    <div class="tech-card reveal" data-delay="320">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="tech-card-label">Digital Employee Experience Platforms</div>
+    </div>
+    <div class="tech-card reveal" data-delay="400">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+      <div class="tech-card-label">Enterprise AI Copilots</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ECOSYSTEM IMAGE ══ -->
+<section class="eco-section wrap">
+  <div class="reveal">
+    <div class="eco-img-wrap">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+           alt="Enterprise HR analytics dashboard and workforce intelligence platform"/>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LEADING PLATFORMS ══ -->
+<section class="platforms-section wrap">
+  <div class="reveal">
+    <div class="eyebrow">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Leading HR Technology Tools &amp; Platforms</span>
+    </div>
+  </div>
+
+  <div class="platform-row reveal">
+    <div class="platform-num mono">01</div>
+    <div>
+      <div class="platform-header">
+        <span class="platform-name serif">Workday Illuminate</span>
+        <span class="platform-tag mono">Workforce Intelligence</span>
+      </div>
+      <p class="platform-text">
+        Brings AI directly into HR through a suite of purpose-built agents for workforce planning,
+        performance management, employee sentiment analysis, HR case management, and job architecture.
+        Built on data from more than 11,000 organizations and over one trillion transactions processed
+        annually, it gives HR teams the context to automate routine work and make faster decisions.
+        <sup><a href="#ref-3">[3]</a></sup>
+      </p>
+    </div>
+  </div>
+
+  <div class="platform-row reveal" data-delay="90">
+    <div class="platform-num mono">02</div>
+    <div>
+      <div class="platform-header">
+        <span class="platform-name serif">SAP SuccessFactors</span>
+        <span class="platform-tag mono">Autonomous HCM</span>
+      </div>
+      <p class="platform-text">
+        Embeds AI into every stage of the employee lifecycle — recruitment, onboarding, learning,
+        performance, and workforce planning — on a unified cloud HCM platform. At SAP Sapphire 2026,
+        SAP introduced Autonomous HCM, powered by Joule Assistants and Business AI, automating
+        payroll, recruitment, onboarding, HR services, and personalized learning.
+        <sup><a href="#ref-4">[4]</a></sup>
+      </p>
+    </div>
+  </div>
+
+  <div class="platform-row reveal" data-delay="180">
+    <div class="platform-num mono">03</div>
+    <div>
+      <div class="platform-header">
+        <span class="platform-name serif">Oracle Manager Edge</span>
+        <span class="platform-tag mono">Leadership Coaching</span>
+      </div>
+      <p class="platform-text">
+        An AI-powered coaching assistant inside Oracle Fusion Cloud HCM. It analyzes employee
+        feedback, goals, performance reviews, and team interactions to deliver real-time guidance
+        to managers. Integrated with Oracle Touchpoints, Microsoft Teams, and Slack, it puts
+        coaching directly inside managers' everyday workflows.
+        <sup><a href="#ref-5">[5]</a></sup>
+      </p>
+    </div>
+  </div>
+
+  <div class="platform-row reveal" data-delay="270">
+    <div class="platform-num mono">04</div>
+    <div>
+      <div class="platform-header">
+        <span class="platform-name serif">Microsoft 365 Copilot</span>
+        <span class="platform-tag mono">Enterprise Productivity</span>
+      </div>
+      <p class="platform-text">
+        Combines generative AI with intelligent agents across Microsoft 365. Microsoft's 2026 Work
+        Trend Index analyzed trillions of productivity signals and over 100,000 Copilot conversations.
+        Copilot helps employees draft documents, summarize meetings, and analyze data — while keeping
+        human judgment at the center of every decision.
+        <sup><a href="#ref-6">[6]</a></sup>
+      </p>
+    </div>
+  </div>
+
+  <div class="platform-row reveal" data-delay="360">
+    <div class="platform-num mono">05</div>
+    <div>
+      <div class="platform-header">
+        <span class="platform-name serif">LinkedIn Talent Solutions</span>
+        <span class="platform-tag mono">Intelligent Recruiting</span>
+      </div>
+      <p class="platform-text">
+        Makes recruitment faster through AI. The 2026 Hiring Release introduces AI-assisted
+        candidate search, personalized recruiter follow-up messages, Microsoft Teams integration,
+        and an upgraded Hiring Assistant — helping recruiters spend less time on repetitive
+        sourcing and more time building candidate relationships.
+        <sup><a href="#ref-7">[7]</a></sup>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AI IN ACTION ══ -->
+<section class="cases-section wrap">
+  <div class="reveal">
+    <div class="eyebrow">
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">AI in Action</span>
+    </div>
+    <p class="cases-intro serif">Four enterprise deployments, and the measurable difference they're making today.</p>
+  </div>
+
+  <div class="case-list">
+
+    <!-- IBM AskHR -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <svg class="case-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8894A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="case-name serif">IBM AskHR</span>
+        <span class="case-tag mono">AI-Powered Employee Self-Service</span>
+      </div>
+      <p class="case-text">
+        IBM's AskHR, built on IBM watsonx Orchestrate, is changing how employees access HR support.
+        Instead of waiting for manual assistance, employees can check payslips, request leave,
+        generate employment verification letters, and find HR policies through a single conversational
+        interface. By connecting with enterprise systems such as Workday, SAP, and Concur, AskHR
+        automates routine requests while allowing HR teams to spend more time on strategic work. AI
+        handles everyday questions, while HR advisors step in for more complex employee needs.
+        <sup><a href="#ref-8">[8]</a></sup>
+      </p>
+      <div class="case-section-label mono">Business Impact</div>
+      <div class="stats-grid">
+        <div><div class="stat-num mono" data-countup="80" data-suffix="+">0</div><div class="stat-label">HR tasks automated</div></div>
+        <div><div class="stat-num mono" data-countup="2.1" data-suffix="M+" data-decimal="true">0</div><div class="stat-label">employee conversations / year</div></div>
+        <div><div class="stat-num mono" data-countup="1" data-suffix="M+">0</div><div class="stat-label">HR transactions processed, 2024</div></div>
+        <div><div class="stat-num mono" data-countup="99" data-suffix="%">0</div><div class="stat-label">manager adoption</div></div>
+        <div><div class="stat-num mono" data-countup="94" data-suffix="%">0</div><div class="stat-label">containment, routine queries</div></div>
+        <div><div class="stat-num mono" data-countup="40" data-suffix="%">0</div><div class="stat-label">lower HR op. cost, 4 yrs</div></div>
+        <div><div class="stat-num mono" data-countup="75" data-suffix="%">0</div><div class="stat-label">fewer support tickets since 2016</div></div>
+        <div><div class="stat-num mono" data-countup="11.5" data-suffix="M" data-decimal="true">0</div><div class="stat-label">employee interactions, 2024</div></div>
+      </div>
+    </div>
+
+    <!-- Oracle Manager Edge -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <svg class="case-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8894A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        <span class="case-name serif">Oracle Manager Edge</span>
+        <span class="case-tag mono">AI-Powered Leadership Development</span>
+      </div>
+      <p class="case-text">
+        Managing people has become more data-driven with Oracle Manager Edge, an AI-powered coaching
+        assistant within Oracle Fusion Cloud HCM. It gives managers real-time guidance by bringing
+        together employee feedback, goals, performance reviews, team interactions, and other workforce
+        insights. Available through Oracle Touchpoints, Microsoft Teams, and Slack, the platform helps
+        managers have better performance conversations, support employee development, and build
+        stronger, more engaged teams.
+        <sup><a href="#ref-5">[5]</a></sup>
+      </p>
+      <div class="case-section-label mono">Key Capabilities</div>
+      <ul class="checklist">
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          AI-powered coaching for managers
+        </li>
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Personalized, context-aware recommendations
+        </li>
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Real-time support for performance and growth discussions
+        </li>
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Improved employee engagement and retention
+        </li>
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Stronger leadership development across the organization
+        </li>
+        <li>
+          <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Integrated with Microsoft Teams and Slack
+        </li>
+      </ul>
+    </div>
+
+    <!-- Microsoft 365 Copilot -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <svg class="case-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8894A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+        <span class="case-name serif">Microsoft 365 Copilot</span>
+        <span class="case-tag mono">AI-Powered Enterprise Productivity</span>
+      </div>
+      <p class="case-text">
+        Microsoft 365 Copilot is changing the way people work by bringing Generative AI into everyday
+        business applications. It helps employees create documents, analyze data, summarize meetings,
+        and manage workflows more efficiently, allowing them to spend less time on repetitive work and
+        more time on decision-making and problem-solving. Built with agentic AI, Copilot supports work
+        across Microsoft 365 while keeping people at the center of important decisions.
+        <sup><a href="#ref-6">[6]</a></sup>
+      </p>
+      <div class="case-section-label mono">Key Insights — 2026 Work Trend Index</div>
+      <div class="stats-grid">
+        <div><div class="stat-num mono" data-countup="58" data-suffix="%">0</div><div class="stat-label">of AI users report work they couldn't do a year ago</div></div>
+        <div><div class="stat-num mono" data-countup="80" data-suffix="%">0</div><div class="stat-label">of that among advanced AI users</div></div>
+        <div><div class="stat-num mono" data-countup="49" data-suffix="%">0</div><div class="stat-label">of Copilot chats support cognitive work</div></div>
+      </div>
+      <p class="insight-note">
+        Organizational factors account for 67% of AI's reported impact, versus 32% from individual
+        factors. Copilot enables multi-step AI actions across Word, Excel, PowerPoint, and Outlook.
+      </p>
+    </div>
+
+    <!-- Workday Illuminate -->
+    <div class="case-card reveal">
+      <div class="case-header">
+        <svg class="case-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8894A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
+        <span class="case-name serif">Workday Illuminate</span>
+        <span class="case-tag mono">Next-Generation Workforce Management</span>
+      </div>
+      <p class="case-text">
+        Workday Illuminate brings AI directly into workforce management through a suite of
+        purpose-built AI agents. These agents support HR teams with workforce planning, performance
+        management, employee sentiment analysis, HR case management, and job architecture. By taking
+        care of repetitive HR processes and providing timely workforce insights, Illuminate helps HR
+        leaders improve employee experiences while giving them more time to focus on strategic
+        workforce priorities.
+        <sup><a href="#ref-3">[3]</a></sup>
+      </p>
+      <div class="case-section-label mono">Key Capabilities</div>
+      <div class="agent-grid">
+        <div class="agent-item">
+          <svg width="17" height="17" style="flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <div><div class="agent-name">Performance Agent</div><div class="agent-desc">Analyzes enterprise performance data to streamline reviews and recommend actions.</div></div>
+        </div>
+        <div class="agent-item">
+          <svg width="17" height="17" style="flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+          <div><div class="agent-name">Employee Sentiment Agent</div><div class="agent-desc">Continuously analyzes employee feedback for actionable engagement insights.</div></div>
+        </div>
+        <div class="agent-item">
+          <svg width="17" height="17" style="flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <div><div class="agent-name">Case Agent</div><div class="agent-desc">Automates HR administrative tasks, reducing resolution times and improving efficiency.</div></div>
+        </div>
+        <div class="agent-item">
+          <svg width="17" height="17" style="flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          <div><div class="agent-name">Job Architecture Agent</div><div class="agent-desc">Automates job ladder creation and management to support workforce agility.</div></div>
+        </div>
+        <div class="agent-item">
+          <svg width="17" height="17" style="flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="#1F5C57" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div><div class="agent-name">Business Process Copilot Agent</div><div class="agent-desc">Simplifies HR process implementation, reducing manual effort for HR teams.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ REFERENCES ══ -->
+<footer class="footer-section">
+  <div class="reveal footer-divider">
+    <p class="refs-heading mono">Sources &amp; References</p>
+    <ol class="refs-list">
+      <li id="ref-1"><span class="ref-num">[1]</span><span>Deloitte. 2026 Global Human Capital Trends. <a href="https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-2"><span class="ref-num">[2]</span><span>Nasscom–Zinnov. GCC Landscape in India, FY2026. <a href="https://www.reuters.com/world/india/global-firms-rethink-gcc-hiring-india-ai-shifts-skill-demand-2026-05-25/" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-3"><span class="ref-num">[3]</span><span>Workday. Workday Illuminate Expands with New AI Agents for HR, Finance, and Industry. <a href="https://newsroom.workday.com/2025-09-16-Workday-Illuminate-TM-Expands-with-New-AI-Agents-for-HR,-Finance,-and-Industry" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-4"><span class="ref-num">[4]</span><span>SAP News. SAP SuccessFactors Innovations: A New Era of Autonomous HCM. <a href="https://news.sap.com/2026/05/sap-successfactors-innovations-new-era-autonomous-hcm/" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-5"><span class="ref-num">[5]</span><span>Oracle. Oracle Helps Organizations Scale Effective Leadership with Oracle Manager Edge. <a href="https://www.oracle.com/news/announcement/oracle-helps-organizations-scale-effective-leadership-with-oracle-manager-edge-2026-06-30/" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-6"><span class="ref-num">[6]</span><span>Microsoft. Microsoft 365 Copilot, Human Agency, and the Opportunity for Every Organization. <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/microsoft-365-copilot-human-agency-and-the-opportunity-for-every-organization/" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-7"><span class="ref-num">[7]</span><span>LinkedIn Talent Solutions. 2026 LinkedIn Hiring Release. <a href="https://tcommunity.linkedin.com/product-updates/2026-linkedin-hiring-release-2275" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+      <li id="ref-8"><span class="ref-num">[8]</span><span>IBM. Transforming HR Support with Agentic AI (AskHR). <a href="https://www.ibm.com/case-studies/ibm-askhr" target="_blank" rel="noreferrer" class="ref-src-link">source ↗</a></span></li>
+    </ol>
+  </div>
+</footer>
+
+<script>
+/* ── progress bar on load ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('progressBar').style.width = '100%';
+  }, 200);
+});
+
+/* ── reveal on scroll ── */
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => revealObserver.observe(el));
+
+/* ── count-up ── */
+function animateCountUp(el) {
+  const target = parseFloat(el.dataset.countup);
+  const suffix = el.dataset.suffix || '';
+  const isDecimal = el.dataset.decimal === 'true';
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = (isDecimal ? target.toFixed(1) : target) + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+const countUps = document.querySelectorAll('[data-countup]');
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCountUp(e.target);
+      countObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+countUps.forEach(el => countObserver.observe(el));
+</script>
+</body>
+</html>
