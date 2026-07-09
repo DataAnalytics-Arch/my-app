@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import {
   Brain,
@@ -16,6 +17,8 @@ import {
   Settings2,
 } from "lucide-react";
 
+import logo from "./assets/logo.png";
+
 /* ---------------------------------------------------------------
    Netscribes Logo Component
 --------------------------------------------------------------- */
@@ -23,7 +26,7 @@ function NetscribesLogo({ height = 36, style }) {
   return (
     <div style={{ display: "flex", alignItems: "center", height, ...style }}>
       <img
-        src="/src/logo.png"
+        src={logo}
         alt="Netscribes Logo"
         style={{
           height: `${height}px`,
@@ -32,10 +35,10 @@ function NetscribesLogo({ height = 36, style }) {
           objectFit: "contain",
         }}
         onError={(e) => {
-          // If the logo image hasn't been uploaded yet, render a beautiful fallback
-          e.target.style.display = "none";
-          if (e.target.nextSibling) {
-            e.target.nextSibling.style.display = "flex";
+          e.currentTarget.style.display = "none";
+          const fallback = e.currentTarget.nextElementSibling;
+          if (fallback) {
+            fallback.style.display = "flex";
           }
         }}
       />
