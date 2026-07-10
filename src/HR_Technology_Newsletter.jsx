@@ -204,7 +204,7 @@ const platforms = [
     tag: "Workforce Intelligence",
     text:
       "Brings Artificial Intelligence directly into HR through a suite of purpose built agents for workforce planning, performance management, employee sentiment analysis, HR case management, and job architecture. Built on data from more than 11,000 organizations and over one trillion transactions processed annually, it gives HR teams the context to automate routine work and make faster decisions, shifting HR's focus from administrative work to strategic workforce planning.",
-    ref: 3,
+    ref: 6,
     image: null,
   },
   {
@@ -213,7 +213,7 @@ const platforms = [
     tag: "Autonomous HCM",
     text:
       "Embeds Artificial Intelligence into every stage of the employee lifecycle including recruitment, onboarding, learning, performance, and workforce planning on a unified cloud HCM platform. At SAP Sapphire 2026, SAP introduced Autonomous HCM, powered by Joule Assistants and Business AI, to automate payroll, recruitment, onboarding, HR services, workforce planning, and personalized learning. By combining enterprise data with AI, the platform reduces manual work, identifies skills gaps, and supports faster workforce decisions. AI becomes part of the employee lifecycle rather than a standalone capability.",
-    ref: 4,
+    ref: 7,
     image: null,
   },
   {
@@ -222,7 +222,7 @@ const platforms = [
     tag: "Leadership Coaching",
     text:
       "An AI powered coaching assistant inside Oracle Fusion Cloud HCM. It analyzes employee feedback, goals, performance reviews, and team interactions to deliver real time guidance to managers. Integrated with Oracle Touchpoints, Microsoft Teams, and Slack, it brings coaching directly into managers' daily workflows, strengthening leadership development, improving employee engagement, and supporting higher performing teams.",
-    ref: 5,
+    ref: 8,
     image: null,
   },
   {
@@ -231,7 +231,7 @@ const platforms = [
     tag: "Enterprise Productivity",
     text:
       "Combines Generative AI with intelligent agents across Microsoft 365. Microsoft's 2026 Work Trend Index analyzed trillions of productivity signals and more than 100,000 Copilot conversations. Copilot helps employees create documents, summarize meetings, analyze data, and automate repetitive work while keeping human judgment at the center of every decision. More time can then be spent on strategic thinking and other high value work.",
-    ref: 6,
+    ref: 9,
     image: null,
   },
   {
@@ -240,7 +240,7 @@ const platforms = [
     tag: "Intelligent Recruiting",
     text:
       "Makes recruitment faster through AI. The 2026 Hiring Release introduces AI assisted candidate search, personalized recruiter follow up messages, Microsoft Teams integration, and an upgraded Hiring Assistant. Recruiters spend less time on repetitive sourcing and more time building meaningful candidate relationships, improving both hiring efficiency and the overall candidate experience.",
-    ref: 7,
+    ref: 10,
     image: null,
   },
 ];
@@ -252,7 +252,7 @@ const caseStudies = [
     icon: MessageCircle,
     text:
       "IBM's AskHR, built on IBM watsonx Orchestrate, is changing how employees access HR support. Instead of waiting for manual assistance, employees can check payslips, request leave, generate employment verification letters, and find HR policies through a single conversational interface. By connecting with enterprise systems such as Workday, SAP, and Concur, AskHR automates routine requests while allowing HR teams to spend more time on strategic work. AI handles everyday questions, while HR advisors step in for more complex employee needs.",
-    ref: 8,
+    ref: 11,
     kind: "stats",
     kicker: "Business Impact",
     stats: [
@@ -272,7 +272,7 @@ const caseStudies = [
     icon: Compass,
     text:
       "Managing people has become more data-driven with Oracle Manager Edge, an AI-powered coaching assistant within Oracle Fusion Cloud HCM. It gives managers real-time guidance by bringing together employee feedback, goals, performance reviews, team interactions, and other workforce insights. Available through Oracle Touchpoints, Microsoft Teams, and Slack, the platform helps managers have better performance conversations, support employee development, and build stronger, more engaged teams.",
-    ref: 5,
+    ref: 8,
     kind: "capabilities",
     kicker: "Key Capabilities",
     capabilities: [
@@ -290,7 +290,7 @@ const caseStudies = [
     icon: Gauge,
     text:
       "Microsoft 365 Copilot is changing the way people work by bringing Generative AI into everyday business applications. It helps employees create documents, analyze data, summarize meetings, and manage workflows more efficiently, allowing them to spend less time on repetitive work and more time on decision-making and problem-solving. Built with agentic AI, Copilot supports work across Microsoft 365 while keeping people at the center of important decisions.",
-    ref: 6,
+    ref: 9,
     kind: "insights",
     kicker: "Key Insights — 2026 Work Trend Index",
     image: IMG_ECOSYSTEM,
@@ -308,7 +308,7 @@ const caseStudies = [
     icon: Sparkles,
     text:
       "Workday Illuminate brings AI directly into workforce management through a suite of purpose-built AI agents. These agents support HR teams with workforce planning, performance management, employee sentiment analysis, HR case management, and job architecture. By taking care of repetitive HR processes and providing timely workforce insights, Illuminate helps HR leaders improve employee experiences while giving them more time to focus on strategic workforce priorities.",
-    ref: 3,
+    ref: 6,
     kind: "agents",
     kicker: "Key Capabilities",
     image: IMG_BOARDROOM,
@@ -344,58 +344,66 @@ export default function Newsletter() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Montserrat:wght@800;900&display=swap');
         * { box-sizing: border-box; }
+        body { background: #F9F8F6; margin: 0; }
+        p { text-align: justify; }
         .serif { font-family: 'Source Serif 4', serif; }
         .mono { font-family: 'IBM Plex Mono', monospace; }
-        a.ref-link { color: #1F5C57; text-decoration: none; border-bottom: 1px solid #1F5C57; }
-        a.ref-link:hover { color: #B8894A; border-color: #B8894A; }
+        a.ref-link { color: #C4973A; text-decoration: none; border-bottom: 1px dotted #C4973A; }
+        a.ref-link:hover { color: #D9BB86; border-color: #D9BB86; }
         button.ref-link {
           background: none; border: none; padding: 0; margin: 0;
           font: inherit; cursor: pointer; display: inline;
-          color: #1F5C57; border-bottom: 1px solid #1F5C57;
+          color: #C4973A; border-bottom: 1px dotted #C4973A;
         }
-        button.ref-link:hover { color: #B8894A; border-color: #B8894A; }
+        button.ref-link:hover { color: #D9BB86; border-color: #D9BB86; }
         .hover-card { transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease; }
-        .hover-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(20,33,61,0.12); }
+        .hover-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,23,42,0.18); }
         @media (prefers-reduced-motion: reduce) {
           * { transition: none !important; animation: none !important; }
         }
-        ::selection { background: #B8894A; color: #F6F3EC; }
+        ::selection { background: #C4973A; color: #fff; }
       `}</style>
 
       {/* ============ MASTHEAD ============ */}
       <header
         style={{
-          borderBottom: "3px solid #14213D",
-          background: "#F6F3EC",
+          background: "#0F172A",
           position: "sticky",
           top: 0,
           zIndex: 20,
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
         <div
           style={{
-            maxWidth: "1080px",
+            maxWidth: "1200px",
             margin: "0 auto",
-            padding: "18px 28px 14px",
+            padding: "16px 32px",
           }}
         >
           <div
+            className="masthead-row"
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              flexWrap: "wrap",
+              gap: "16px",
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+            {/* Logo — LEFT */}
+            <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+              <NetscribesLogo height={34} />
+            </div>
+            {/* Title block — RIGHT */}
+            <div className="masthead-title" style={{ textAlign: "right" }}>
               <h1
                 className="serif"
                 style={{
-                  fontSize: "clamp(28px, 5vw, 44px)",
+                  fontSize: "clamp(20px, 3vw, 30px)",
                   fontWeight: 700,
-                  color: "#14213D",
+                  color: "#FFFFFF",
                   margin: "0",
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "-0.01em",
                   lineHeight: 1.1,
                 }}
               >
@@ -404,360 +412,589 @@ export default function Newsletter() {
               <div
                 className="mono"
                 style={{
-                  fontSize: "clamp(10px, 1.4vw, 13px)",
-                  letterSpacing: "0.18em",
+                  fontSize: "clamp(9px, 1.2vw, 11px)",
+                  letterSpacing: "0.2em",
                   textTransform: "uppercase",
-                  color: "#1F5C57",
-                  fontWeight: 600,
+                  color: "#94A3B8",
+                  fontWeight: 500,
                   marginTop: "3px",
                 }}
               >
                 HR &amp; Technology Edition
               </div>
-              <div
-                className="serif"
-                style={{
-                  fontSize: "clamp(11px, 1.3vw, 13.5px)",
-                  color: "#6B7280",
-                  fontStyle: "italic",
-                  marginTop: "2px",
-                }}
-              >
-                Exploring the trends shaping the future of work
-              </div>
-            </div>
-            {/* Logo top-right */}
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <NetscribesLogo height={38} />
             </div>
           </div>
         </div>
         {/* animated progress rule */}
-        <div style={{ height: "2px", background: "#E4DECF", overflow: "hidden" }}>
+        <div style={{ height: "2px", background: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
           <div
             style={{
               height: "100%",
               width: ticked ? "100%" : "0%",
-              background: "linear-gradient(90deg, #B8894A, #1F5C57)",
+              background: "linear-gradient(90deg, #C4973A, #4ADED6)",
               transition: "width 1.6s cubic-bezier(.22,.61,.36,1)",
             }}
           />
         </div>
       </header>
 
-      {/* ============ HERO ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "48px 28px 0" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.1fr 0.9fr",
-            gap: "44px",
-            alignItems: "center",
-          }}
-          className="hero-grid"
-        >
+      {/* ============ HERO — dark full-bleed ============ */}
+      <section style={{ background: "#0F172A", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "80px 32px 72px" }}>
           <Reveal>
-            <div>
-              <p
-                className="serif"
-                style={{
-                  fontSize: "clamp(19px, 2.4vw, 24px)",
-                  lineHeight: 1.5,
-                  color: "#14213D",
-                  margin: "0 0 18px",
-                  fontWeight: 500,
-                }}
-              >
-                Artificial Intelligence is no longer just an emerging trend in HR—it is becoming a core part of how organizations hire, develop, and manage talent. This edition explores how AI is reshaping the workplace and the technologies driving that transformation.
-              </p>
-              <p style={{ fontSize: "15.5px", lineHeight: 1.75, color: "#3D4451" }}>
-                Across the world, HR teams are redesigning how work gets done as artificial intelligence moves from automating routine tasks to becoming a genuine partner in decision-making.
-              </p>
-              <p style={{ fontSize: "15.5px", lineHeight: 1.75, color: "#3D4451", marginTop: "14px" }}>
-                Organizations are moving beyond using AI simply to automate
-                routine work. Instead, they are redesigning work so that people
-                and AI collaborate more effectively, improving decision-making,
-                adaptability, and overall workforce performance.{" "}
-                <sup>
-                  <button onClick={() => scrollToRef("ref-1")} className="ref-link">1</button>
-                </sup>
-              </p>
-              <p style={{ fontSize: "15.5px", lineHeight: 1.75, color: "#3D4451", marginTop: "14px" }}>
-                According to Deloitte's 2026 Global Human Capital Trends report,{" "}
-                <strong style={{ color: "#14213D" }}>
-                  7 in 10 business leaders identify speed and agility
-                </strong>{" "}
-                as their primary competitive strategy over the next three years. The
-                focus is shifting toward human-AI collaboration, continuous
-                learning, and building workforces that respond quickly to
-                changing business needs.{" "}
-                <sup>
-                  <button onClick={() => scrollToRef("ref-1")} className="ref-link">1</button>
-                </sup>
-              </p>
-              <p style={{ fontSize: "15.5px", lineHeight: 1.75, color: "#3D4451", marginTop: "14px" }}>
-                This global shift is especially visible in India, where Global Capability Centres (GCCs) are rapidly adopting AI across recruitment, workforce planning, and employee development to support growing business demands.{" "}
-                <sup>
-                  <button onClick={() => scrollToRef("ref-2")} className="ref-link">2</button>
-                </sup>
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
             <div
+              className="mono"
               style={{
-                borderRadius: "6px",
-                overflow: "hidden",
-                border: "1px solid #E4DECF",
-                boxShadow: "0 24px 50px rgba(20,33,61,0.14)",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                fontSize: "11px",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#C4973A",
+                marginBottom: "24px",
               }}
             >
-              <img
-                src={IMG_WORKDAY}
-                alt="Microsoft 365 Copilot bringing AI-powered enterprise productivity to document creation, data analysis, meeting summaries, and workflow management"
-                style={{ width: "100%", display: "block" }}
-              />
+              <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+              The Future of Work
             </div>
+            <h2
+              className="serif"
+              style={{
+                fontSize: "clamp(36px, 6vw, 72px)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                margin: "0 0 28px",
+                lineHeight: 1.08,
+                maxWidth: "760px",
+              }}
+            >
+              Exploring the trends shaping the{" "}
+              <span style={{ color: "#C4973A" }}>future of work</span>
+            </h2>
+            <p
+              style={{
+                fontSize: "clamp(15px, 1.6vw, 17px)",
+                lineHeight: 1.75,
+                color: "#94A3B8",
+                maxWidth: "580px",
+                margin: 0,
+              }}
+            >
+              Artificial Intelligence is no longer just an emerging trend in HR. Organizations are embedding AI into recruitment, workforce planning, employee development, and everyday decision making — and HR is evolving from a support function into a strategic driver of workforce transformation.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ============ INDIAN PERSPECTIVE / STAT TICKER ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "56px 28px 0" }}>
-        <Reveal>
+      {/* ============ BODY TEXT — light section ============ */}
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px" }}>
           <div
+            className="hero-grid"
             style={{
-              background: "#14213D",
-              borderRadius: "8px",
-              padding: "36px 32px",
-              color: "#F6F3EC",
+              display: "grid",
+              gridTemplateColumns: "1.15fr 0.85fr",
+              gap: "56px",
+              alignItems: "start",
             }}
           >
-            <Eyebrow>The Indian Perspective</Eyebrow>
+            <Reveal>
+              <div>
+                <p style={{ fontSize: "clamp(18px, 1.8vw, 22px)", lineHeight: 1.7, color: "#1E293B", fontWeight: 500, margin: "0 0 22px" }}>
+                  Across the world, HR teams are redesigning how work gets done as Artificial Intelligence moves from automating routine tasks to becoming a genuine partner in decision-making.
+                </p>
+                <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", marginTop: "0", margin: "0 0 18px" }}>
+                  Organizations are moving beyond using AI simply to automate routine work. Instead, they are redesigning work so that people and AI collaborate more effectively, improving decision-making, adaptability, and overall workforce performance. Gartner predicts that by 2030, AI will automate or perform up to 50% of current HR activities, fundamentally transforming HR roles and workflows. As routine administrative tasks become increasingly automated, HR professionals can focus more on strategic workforce planning, employee experience, talent development, and business partnership.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-1")} className="ref-link">1</button>, <button onClick={() => scrollToRef("ref-2")} className="ref-link">2</button>
+                  </sup>
+                </p>
+
+                {/* Quote callout box */}
+                <div
+                  style={{
+                    background: "#FFFFFF",
+                    borderLeft: "4px solid #C4973A",
+                    borderRadius: "0 8px 8px 0",
+                    padding: "22px 24px",
+                    margin: "24px 0",
+                    boxShadow: "0 2px 12px rgba(15,23,42,0.06)",
+                  }}
+                >
+                  <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#1E293B", fontWeight: 600, margin: "0 0 8px" }}>
+                    According to Deloitte's 2026 Global Human Capital Trends report,{" "}
+                    <strong style={{ color: "#14213D" }}>7 in 10 business leaders identify speed and agility</strong>{" "}
+                    as their primary competitive strategy over the next three years.
+                  </p>
+                  <p style={{ fontSize: "13.5px", lineHeight: 1.6, color: "#64748B", margin: 0 }}>
+                    Highlighting a growing focus on human and AI collaboration, continuous learning, and adaptable workforces.{" "}
+                    <sup><button onClick={() => scrollToRef("ref-2")} className="ref-link">2</button></sup>
+                  </p>
+                </div>
+
+                <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", margin: 0 }}>
+                  This global shift is especially visible in India, where Global Capability Centres (GCCs) are rapidly adopting AI across recruitment, workforce planning, and employee development to support growing business demands.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-3")} className="ref-link">3</button>
+                  </sup>
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <div
+                style={{
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  border: "1px solid #E2E8F0",
+                  boxShadow: "0 24px 50px rgba(15,23,42,0.12)",
+                }}
+              >
+                <img
+                  src={IMG_WORKDAY}
+                  alt="Microsoft 365 Copilot bringing AI-powered enterprise productivity to document creation, data analysis, meeting summaries, and workflow management"
+                  style={{ width: "100%", display: "block" }}
+                />
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ INDIA'S AI MOMENTUM — dark full-bleed ============ */}
+      <section style={{ background: "#0F172A", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "80px 32px 72px" }}>
+        <Reveal>
+          <div>
+            {/* India Spotlight Header */}
+            <div
+              className="mono"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                fontSize: "11px",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#C4973A",
+                marginBottom: "16px",
+              }}
+            >
+              <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+              Spotlight
+              <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+            </div>
             <p
               className="serif"
               style={{
-                fontSize: "clamp(17px, 2vw, 20px)",
-                lineHeight: 1.6,
-                margin: "0 0 24px",
-                color: "#F0EDE4",
-                maxWidth: "760px",
+                fontSize: "clamp(28px, 4vw, 48px)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                textAlign: "center",
+                margin: "0 auto 20px",
+                maxWidth: "700px",
               }}
             >
-              India is emerging as a key driver of this transformation. Global
-              Capability Centres are rewriting their hiring strategies to prioritize
-              AI expertise, cybersecurity skills, and continuous upskilling over
-              traditional hiring routes.{" "}
+              India's AI Momentum
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(14px, 1.4vw, 16px)",
+                lineHeight: 1.7,
+                color: "#94A3B8",
+                textAlign: "center",
+                margin: "0 auto 40px",
+                maxWidth: "680px",
+              }}
+            >
+              India is emerging as one of the world's fastest-growing enterprise AI markets, with organizations accelerating investments and moving from pilot projects to enterprise-wide adoption. According to Deloitte's State of AI in the Enterprise 2026: India Insights, Indian organizations are leading global peers in scaling AI across business functions while continuing to invest in workforce readiness, governance, and AI capabilities.{" "}
               <sup>
-                <button
-                  onClick={() => scrollToRef("ref-2")}
-                  className="ref-link"
-                  style={{ color: "#D9BB86", borderColor: "#D9BB86" }}
-                >
-                  2
-                </button>
+                <button onClick={() => scrollToRef("ref-3")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>3</button>
               </sup>
             </p>
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-                gap: "24px",
-                borderTop: "1px solid rgba(246,243,236,0.18)",
-                paddingTop: "24px",
+                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gap: "16px",
+                marginBottom: "32px",
               }}
             >
-              <div>
-                <div className="mono" style={{ fontSize: "34px", fontWeight: 600, color: "#D9BB86" }}>
-                  <CountUp value={2117} />
+              <div
+                style={{
+                  background: "#1E293B",
+                  borderRadius: "12px",
+                  padding: "24px 20px",
+                }}
+              >
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={94} suffix="%" />
                 </div>
-                <div style={{ fontSize: "13px", color: "#B9C2CE", marginTop: "4px" }}>
-                  GCCs operating in India, FY2026
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  of Indian organizations expect AI investment to increase over the next year.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-3")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>3</button>
+                  </sup>
                 </div>
               </div>
-              <div>
-                <div className="mono" style={{ fontSize: "34px", fontWeight: 600, color: "#D9BB86" }}>
-                  <CountUp value={2.36} suffix="M" />
+              <div
+                style={{
+                  background: "#1E293B",
+                  borderRadius: "12px",
+                  padding: "24px 20px",
+                }}
+              >
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={40} suffix="%" />
                 </div>
-                <div style={{ fontSize: "13px", color: "#B9C2CE", marginTop: "4px" }}>
-                  Professionals employed across India's GCC ecosystem, FY2026
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  of Indian organizations report significant or full-scale AI adoption, compared with a global average of 28%.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-3")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>3</button>
+                  </sup>
                 </div>
               </div>
-              <div>
-                <div className="mono" style={{ fontSize: "34px", fontWeight: 600, color: "#D9BB86" }}>
-                  <CountUp value={70} suffix="%" />
+              <div
+                style={{
+                  background: "#1E293B",
+                  borderRadius: "12px",
+                  padding: "24px 20px",
+                }}
+              >
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={97} suffix="%" />
                 </div>
-                <div style={{ fontSize: "13px", color: "#B9C2CE", marginTop: "4px" }}>
-                  of leaders prioritize speed &amp; agility
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  of organizations expect AI to improve productivity through AI adoption.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-3")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>3</button>
+                  </sup>
+                </div>
+              </div>
+              <div
+                style={{
+                  background: "#1E293B",
+                  borderRadius: "12px",
+                  padding: "24px 20px",
+                }}
+              >
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={61} suffix="%" />
+                </div>
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  of organizations are investing in AI upskilling and reskilling initiatives to prepare employees for broader AI adoption.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-3")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>3</button>
+                  </sup>
                 </div>
               </div>
             </div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* ============ TECHNOLOGIES DRIVING CHANGE ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "56px 28px 0" }}>
-        <Reveal>
-          <Eyebrow>Technologies Driving the Change</Eyebrow>
-        </Reveal>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
-            gap: "16px",
-          }}
-        >
-          {[
-            { icon: Brain, label: "AI-powered Talent Intelligence" },
-            { icon: Building2, label: "Cloud ERP & HCM Systems" },
-            { icon: LineChart, label: "People Analytics" },
-            { icon: Users, label: "Digital Employee Experience Platforms" },
-            { icon: Sparkles, label: "Enterprise AI Copilots" },
-          ].map((item, i) => (
-            <Reveal delay={i * 80} key={item.label}>
-              <div
-                className="hover-card"
-                style={{
-                  background: "#FFFFFF",
-                  border: "1px solid #E4DECF",
-                  borderRadius: "6px",
-                  padding: "22px 18px",
-                  height: "100%",
-                }}
-              >
-                <item.icon size={22} color="#1F5C57" strokeWidth={1.6} />
-                <div
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    color: "#14213D",
-                    marginTop: "14px",
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {item.label}
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: 1.75,
+                color: "#94A3B8",
+                marginTop: "32px",
+                paddingTop: "28px",
+                borderTop: "1px solid rgba(255,255,255,0.08)"
+              }}
+            >
+              The growing adoption of AI is also reflected in the workforce. Deloitte's 2026 Gen Z and Millennial Survey found that 93% of Gen Z and 95% of millennials in India use AI in their day-to-day work. Employees are increasingly leveraging AI for learning and development, career guidance, and productivity, reinforcing HR's role in building AI-ready talent through continuous upskilling and responsible AI adoption.{" "}
+              <sup>
+                <button onClick={() => scrollToRef("ref-4")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>4</button>
+              </sup>
+            </p>
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: 1.75,
+                color: "#94A3B8",
+                marginTop: "28px",
+                paddingTop: "28px",
+                borderTop: "1px solid rgba(255,255,255,0.08)"
+              }}
+            >
+              This momentum is also transforming India's Global Capability Centres.
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "16px",
+                marginTop: "20px"
+              }}
+            >
+              <div style={{ background: "#1E293B", borderRadius: "12px", padding: "24px 20px" }}>
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={2117} />
+                </div>
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  GCCs expected to be operating in India by the end of FY2026.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-5")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>5</button>
+                  </sup>
                 </div>
               </div>
-            </Reveal>
-          ))}
+              <div style={{ background: "#1E293B", borderRadius: "12px", padding: "24px 20px" }}>
+                <div className="mono" style={{ fontSize: "42px", fontWeight: 700, color: "#C4973A", lineHeight: 1 }}>
+                  <CountUp value={2.4} suffix=" Million" />
+                </div>
+                <div style={{ fontSize: "13px", color: "#94A3B8", marginTop: "8px", lineHeight: 1.5 }}>
+                  Professionals expected to be employed across India's GCC ecosystem by FY2026.{" "}
+                  <sup>
+                    <button onClick={() => scrollToRef("ref-5")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>5</button>
+                  </sup>
+                </div>
+              </div>
+            </div>
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: 1.75,
+                color: "#94A3B8",
+                marginTop: "28px"
+              }}
+            >
+              As AI becomes central to business operations, GCCs are reshaping hiring strategies by prioritizing AI expertise, cybersecurity capabilities, and continuous upskilling to build future-ready workforces.{" "}
+              <sup>
+                <button onClick={() => scrollToRef("ref-5")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>5</button>
+              </sup>
+            </p>
+          </div>
+        </Reveal>
+        </div>
+      </section>
+
+      {/* ============ TECHNOLOGIES DRIVING CHANGE — light section ============ */}
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px" }}>
+        <Reveal>
+          <div
+            className="mono"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              fontSize: "11px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#C4973A",
+              marginBottom: "16px",
+            }}
+          >
+            <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+            Enablers
+            <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+          </div>
+          <h2
+            className="serif"
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 44px)",
+              fontWeight: 700,
+              color: "#0F172A",
+              textAlign: "center",
+              margin: "0 auto 48px",
+            }}
+          >
+            Technologies Driving the Change
+          </h2>
+        </Reveal>
+        <Reveal>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "12px",
+              justifyContent: "center",
+            }}
+          >
+            {[
+              "AI-powered Talent Intelligence",
+              "Cloud ERP & HCM Systems",
+              "People Analytics",
+              "Digital Employee Experience Platforms",
+              "Enterprise AI Copilots",
+            ].map((label) => (
+              <div
+                key={label}
+                style={{
+                  background: "#FFFFFF",
+                  border: "1.5px solid #E2E8F0",
+                  borderRadius: "999px",
+                  padding: "10px 22px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  color: "#1E293B",
+                  whiteSpace: "nowrap",
+                  boxShadow: "0 1px 4px rgba(15,23,42,0.06)",
+                }}
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        </Reveal>
         </div>
       </section>
 
       {/* ============ ECOSYSTEM IMAGE ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "56px 28px 0" }}>
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 32px 56px" }}>
         <Reveal>
           <div
             style={{
-              borderRadius: "6px",
+              borderRadius: "12px",
               overflow: "hidden",
-              border: "1px solid #E4DECF",
+              border: "1px solid #E2E8F0",
+              boxShadow: "0 4px 20px rgba(15,23,42,0.08)",
             }}
           >
             <img
               src={IMG_COPILOT}
               alt="Workday Illuminate AI agents powering the future of work: Performance, Employee Sentiment, Job Architecture, Business Process Copilot, and Case agents"
-              style={{ width: "100%", display: "block" }}
+              style={{ width: "100%" }}
             />
           </div>
         </Reveal>
+        </div>
       </section>
 
-      {/* ============ LEADING PLATFORMS ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "56px 28px 0" }}>
+      {/* ============ LEADING PLATFORMS — light section ============ */}
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px" }}>
         <Reveal>
-          <Eyebrow>Leading HR Technology Tools &amp; Platforms</Eyebrow>
+          <div
+            className="mono"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              fontSize: "11px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#C4973A",
+              marginBottom: "16px",
+            }}
+          >
+            <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+            Market Landscape
+            <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+          </div>
+          <h2
+            className="serif"
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 44px)",
+              fontWeight: 700,
+              color: "#0F172A",
+              textAlign: "center",
+              margin: "0 auto 48px",
+            }}
+          >
+            Leading HR Technology Tools &amp; Platforms
+          </h2>
         </Reveal>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           {platforms.map((p, i) => (
             <Reveal delay={i * 90} key={p.name}>
               <div
+                className="hover-card"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: p.image ? "80px 1fr 220px" : "80px 1fr",
-                  gap: "28px",
-                  alignItems: "start",
-                  padding: "30px 0",
-                  borderTop: "1px solid #E4DECF",
+                  background: "#FFFFFF",
+                  border: "1px solid #E2E8F0",
+                  borderRadius: "12px",
+                  padding: "28px 32px",
+                  boxShadow: "0 2px 12px rgba(15,23,42,0.06)",
                 }}
-                className="platform-row"
               >
                 <div
-                  className="serif mono"
                   style={{
-                    fontFamily: "'IBM Plex Mono', monospace",
-                    fontSize: "28px",
-                    color: "#D8C39C",
-                    fontWeight: 600,
+                    display: "grid",
+                    gridTemplateColumns: p.image ? "80px 1fr 220px" : "80px 1fr",
+                    gap: "24px",
+                    alignItems: "start",
                   }}
+                  className="platform-row"
                 >
-                  {p.num}
-                </div>
-                <div>
                   <div
+                    className="serif mono"
                     style={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      gap: "10px",
-                      flexWrap: "wrap",
-                      marginBottom: "8px",
+                      fontFamily: "'IBM Plex Mono', monospace",
+                      fontSize: "28px",
+                      color: "#C4973A",
+                      fontWeight: 600,
                     }}
                   >
-                    <h3
-                      className="serif"
-                      style={{ fontSize: "21px", color: "#14213D", margin: 0, fontWeight: 600 }}
-                    >
-                      {p.name}
-                    </h3>
-                    <span
-                      className="mono"
+                    {p.num}
+                  </div>
+                  <div>
+                    <div
                       style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        color: "#1F5C57",
-                        background: "#EAF0EE",
-                        padding: "3px 8px",
-                        borderRadius: "3px",
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: "10px",
+                        flexWrap: "wrap",
+                        marginBottom: "10px",
                       }}
                     >
-                      {p.tag}
-                    </span>
+                      <h3
+                        className="serif"
+                        style={{ fontSize: "20px", color: "#0F172A", margin: 0, fontWeight: 600 }}
+                      >
+                        {p.name}
+                      </h3>
+                      <span
+                        className="mono"
+                        style={{
+                          fontSize: "10px",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          color: "#0E7490",
+                          background: "#E0F2FE",
+                          padding: "3px 10px",
+                          borderRadius: "999px",
+                        }}
+                      >
+                        {p.tag}
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#475569", margin: 0 }}>
+                      {p.text}{" "}
+                      <sup>
+                        <button onClick={() => scrollToRef(`ref-${p.ref}`)} className="ref-link">
+                          {p.ref}
+                        </button>
+                      </sup>
+                    </p>
                   </div>
-                  <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#3D4451", margin: 0 }}>
-                    {p.text}{" "}
-                    <sup>
-                      <button onClick={() => scrollToRef(`ref-${p.ref}`)} className="ref-link">
-                        {p.ref}
-                      </button>
-                    </sup>
-                  </p>
+                  {p.image && (
+                    <div
+                      className="hover-card"
+                      style={{
+                        borderRadius: "8px",
+                        overflow: "hidden",
+                        border: "1px solid #E2E8F0",
+                      }}
+                    >
+                      <img src={p.image} alt={p.name} style={{ width: "100%", display: "block" }} />
+                    </div>
+                  )}
                 </div>
-                {p.image && (
-                  <div
-                    className="hover-card"
-                    style={{
-                      borderRadius: "6px",
-                      overflow: "hidden",
-                      border: "1px solid #E4DECF",
-                    }}
-                  >
-                    <img src={p.image} alt={p.name} style={{ width: "100%", display: "block" }} />
-                  </div>
-                )}
               </div>
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
-
-      {/* ============ AI IN ACTION ============ */}
-      <section style={{ maxWidth: "1080px", margin: "0 auto", padding: "64px 28px 0" }}>
+      {/* ============ AI IN ACTION — light section ============ */}
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px" }}>
         <Reveal>
-          <Eyebrow>AI in Action</Eyebrow>
           <p
             className="serif"
-            style={{ fontSize: "20px", color: "#14213D", margin: "0 0 32px", fontWeight: 500, maxWidth: "700px" }}
+            style={{ fontSize: "clamp(22px, 2.5vw, 32px)", color: "#0F172A", margin: "0 0 32px", fontWeight: 600 }}
           >
             Four enterprise deployments, and the measurable difference they're making today.
           </p>
@@ -768,9 +1005,10 @@ export default function Newsletter() {
               <div
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid #E4DECF",
-                  borderRadius: "8px",
+                  border: "1px solid #E2E8F0",
+                  borderRadius: "12px",
                   padding: "32px",
+                  boxShadow: "0 2px 12px rgba(15,23,42,0.06)",
                 }}
               >
                 <div
@@ -783,18 +1021,18 @@ export default function Newsletter() {
                 >
                   <div>
                     <div style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "10px", flexWrap: "wrap" }}>
-                      <c.icon size={18} color="#B8894A" />
-                      <h3 className="serif" style={{ fontSize: "20px", color: "#14213D", margin: 0 }}>
+                      <c.icon size={18} color="#C4973A" />
+                      <h3 className="serif" style={{ fontSize: "20px", color: "#0F172A", margin: 0 }}>
                         {c.name}
                       </h3>
                       <span
                         className="mono"
-                        style={{ fontSize: "11px", color: "#1F5C57", textTransform: "uppercase", letterSpacing: "0.06em" }}
+                        style={{ fontSize: "11px", color: "#0E7490", background: "#E0F2FE", textTransform: "uppercase", letterSpacing: "0.06em", padding: "2px 10px", borderRadius: "999px" }}
                       >
                         {c.tag}
                       </span>
                     </div>
-                    <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#3D4451", margin: 0 }}>
+                    <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#475569", margin: 0 }}>
                       {c.text}{" "}
                       <sup>
                         <button onClick={() => scrollToRef(`ref-${c.ref}`)} className="ref-link">
@@ -817,10 +1055,10 @@ export default function Newsletter() {
                     fontSize: "11px",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    color: "#9AA0AB",
+                    color: "#94A3B8",
                     marginTop: "26px",
                     paddingTop: "22px",
-                    borderTop: "1px solid #E4DECF",
+                    borderTop: "1px solid #E2E8F0",
                   }}
                 >
                   {c.kicker}
@@ -838,10 +1076,10 @@ export default function Newsletter() {
                   >
                     {c.stats.map((s) => (
                       <div key={s.label}>
-                        <div className="mono" style={{ fontSize: "28px", fontWeight: 600, color: "#14213D" }}>
+                        <div className="mono" style={{ fontSize: "28px", fontWeight: 600, color: "#0F172A" }}>
                           <CountUp value={s.value} suffix={s.suffix} />
                         </div>
-                        <div style={{ fontSize: "12.5px", color: "#6B7280", marginTop: "4px", lineHeight: 1.4 }}>
+                        <div style={{ fontSize: "12.5px", color: "#475569", marginTop: "4px", lineHeight: 1.4 }}>
                           {s.label}
                         </div>
                       </div>
@@ -853,8 +1091,8 @@ export default function Newsletter() {
                 {c.kind === "capabilities" && (
                   <ul style={{ listStyle: "none", margin: "14px 0 0", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "10px 24px" }}>
                     {c.capabilities.map((item) => (
-                      <li key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start", fontSize: "14px", color: "#3D4451", lineHeight: 1.5 }}>
-                        <CheckCircle2 size={16} color="#1F5C57" style={{ flexShrink: 0, marginTop: "2px" }} />
+                      <li key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start", fontSize: "14px", color: "#475569", lineHeight: 1.5 }}>
+                        <CheckCircle2 size={16} color="#C4973A" style={{ flexShrink: 0, marginTop: "2px" }} />
                         {item}
                       </li>
                     ))}
@@ -874,17 +1112,17 @@ export default function Newsletter() {
                     >
                       {c.stats.map((s) => (
                         <div key={s.label}>
-                          <div className="mono" style={{ fontSize: "28px", fontWeight: 600, color: "#14213D" }}>
+                          <div className="mono" style={{ fontSize: "28px", fontWeight: 600, color: "#0F172A" }}>
                             <CountUp value={s.value} suffix={s.suffix} />
                           </div>
-                          <div style={{ fontSize: "12.5px", color: "#6B7280", marginTop: "4px", lineHeight: 1.4 }}>
+                          <div style={{ fontSize: "12.5px", color: "#475569", marginTop: "4px", lineHeight: 1.4 }}>
                             {s.label}
                           </div>
                         </div>
                       ))}
                     </div>
                     {c.note && (
-                      <p style={{ fontSize: "13.5px", color: "#6B7280", marginTop: "18px", lineHeight: 1.6, fontStyle: "italic" }}>
+                      <p style={{ fontSize: "13.5px", color: "#475569", marginTop: "18px", lineHeight: 1.6, fontStyle: "italic" }}>
                         {c.note}
                       </p>
                     )}
@@ -896,10 +1134,10 @@ export default function Newsletter() {
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "18px", marginTop: "16px" }}>
                     {c.agents.map((a) => (
                       <div key={a.name} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                        <a.icon size={17} color="#1F5C57" style={{ flexShrink: 0, marginTop: "2px" }} />
+                        <a.icon size={17} color="#0D9488" style={{ flexShrink: 0, marginTop: "2px" }} />
                         <div>
-                          <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#14213D" }}>{a.name}</div>
-                          <div style={{ fontSize: "13px", color: "#6B7280", lineHeight: 1.5, marginTop: "2px" }}>{a.desc}</div>
+                          <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#0F172A" }}>{a.name}</div>
+                          <div style={{ fontSize: "13px", color: "#475569", lineHeight: 1.5, marginTop: "2px" }}>{a.desc}</div>
                         </div>
                       </div>
                     ))}
@@ -909,39 +1147,115 @@ export default function Newsletter() {
             </Reveal>
           ))}
         </div>
+        </div>
       </section>
 
-      {/* ============ REFERENCES ============ */}
-      <footer style={{ maxWidth: "1080px", margin: "0 auto", padding: "64px 28px 48px" }}>
+      {/* ============ REFERENCES — dark footer ============ */}
+      <footer style={{ background: "#0F172A", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px 48px" }}>
         <Reveal>
-          <div style={{ borderTop: "2px solid #14213D", paddingTop: "22px" }}>
-            {/* Top row: Sources label left, social icons right */}
+          <div>
+            {/* Header */}
             <div
+              className="mono"
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
-                flexWrap: "wrap",
-                gap: "16px",
+                justifyContent: "center",
+                gap: "10px",
+                fontSize: "11px",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#C4973A",
                 marginBottom: "16px",
               }}
             >
+              <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+              Citations
+              <span style={{ width: "32px", height: "1.5px", background: "#C4973A", display: "inline-block" }} />
+            </div>
+            <h2
+              className="serif"
+              style={{
+                fontSize: "clamp(28px, 3.5vw, 48px)",
+                fontWeight: 700,
+                color: "#FFFFFF",
+                textAlign: "center",
+                margin: "0 auto 48px",
+              }}
+            >
+              Sources &amp; References
+            </h2>
+            {/* Two-column layout: Sources left, Socials right */}
+            <div
+              className="footer-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1.2fr 0.8fr",
+                gap: "48px",
+                marginTop: "32px",
+              }}
+            >
+              {/* SOURCES — LEFT */}
+              <div>
+                <ol
+                  style={{
+                    margin: 0,
+                    padding: 0,
+                    listStyle: "none",
+                    fontSize: "13px",
+                    color: "#94A3B8",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {[
+                    ["1", "Gartner. Build an HR Operating Model That Succeeds in the AI Era.", "#"],
+                    ["2", "Deloitte. 2026 Global Human Capital Trends.", "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html"],
+                    ["3", "Deloitte India. State of AI in the Enterprise 2026: India Insights.", "https://www.deloitte.com/in/en/issues/generative-ai/state-of-ai-in-enterprise.html"],
+                    ["4", "Deloitte Global. 2026 Gen Z and Millennial Survey – Country Profile: India.", "#"],
+                    ["5", "Reuters. Global firms rethink GCC hiring in India as AI shifts skill demand. (May 25, 2026)", "https://www.reuters.com/world/india/global-firms-rethink-gcc-hiring-india-ai-shifts-skill-demand-2026-05-25/"],
+                    ["6", "Workday. Workday Illuminate Expands with New AI Agents for HR, Finance, and Industry.", "https://newsroom.workday.com/2025-09-16-Workday-Illuminate-TM-Expands-with-New-AI-Agents-for-HR,-Finance,-and-Industry"],
+                    ["7", "SAP News. SAP SuccessFactors Innovations: A New Era of Autonomous HCM.", "https://news.sap.com/2026/05/sap-successfactors-innovations-new-era-autonomous-hcm/"],
+                    ["8", "Oracle. Oracle Helps Organizations Scale Effective Leadership with Oracle Manager Edge.", "https://www.oracle.com/news/announcement/oracle-helps-organizations-scale-effective-leadership-with-oracle-manager-edge-2026-06-30/"],
+                    ["9", "Microsoft. Microsoft 365 Copilot, Human Agency, and the Opportunity for Every Organization.", "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/microsoft-365-copilot-human-agency-and-the-opportunity-for-every-organization/"],
+                    ["10", "LinkedIn Talent Solutions. 2026 LinkedIn Hiring Release.", "https://tcommunity.linkedin.com/product-updates/2026-linkedin-hiring-release-2275"],
+                    ["11", "IBM. Transforming HR Support with Agentic AI (AskHR).", "https://www.ibm.com/case-studies/ibm-askhr"],
+                  ].map(([n, txt, url]) => (
+                    <li key={n} id={`ref-${n}`} style={{ display: "flex", gap: "10px", marginBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingBottom: "12px" }}>
+                      <span className="mono" style={{ color: "#C4973A", flexShrink: 0, fontWeight: "600" }}>
+                        [{n}]
+                      </span>
+                      <span>
+                        {txt}{" "}
+                        {url !== "#" && (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="ref-link"
+                            style={{ display: "inline-flex", alignItems: "center", gap: "2px", color: "#C4973A", textDecoration: "none" }}
+                          >
+                            source <ArrowUpRight size={11} style={{ display: "inline" }} />
+                          </a>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* SOCIALS — RIGHT */}
               <div
-                className="mono"
+                className="footer-socials-col"
                 style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#6B7280",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  gap: "20px",
                 }}
               >
-                Sources &amp; References
-              </div>
-              {/* Right column: Netscribes logo above the social icons */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "12px" }}>
-                <NetscribesLogo height={26} />
-                {/* Social media handles */}
-                <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                <NetscribesLogo height={32} />
+                <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                   {[
                     {
                       name: "LinkedIn",
@@ -1016,7 +1330,7 @@ export default function Newsletter() {
                         borderRadius: "4px",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = "#1F5C57";
+                        e.currentTarget.style.color = "#C4973A";
                         e.currentTarget.style.transform = "translateY(-2px)";
                       }}
                       onMouseLeave={(e) => {
@@ -1030,48 +1344,9 @@ export default function Newsletter() {
                 </div>
               </div>
             </div>
-            <ol
-              style={{
-                margin: 0,
-                padding: 0,
-                listStyle: "none",
-                fontSize: "12.5px",
-                color: "#6B7280",
-                lineHeight: 1.9,
-              }}
-            >
-              {[
-                ["1", "Deloitte. 2026 Global Human Capital Trends.", "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html"],
-                ["2", "Nasscom–Zinnov. GCC Landscape in India, FY2026.", "https://www.reuters.com/world/india/global-firms-rethink-gcc-hiring-india-ai-shifts-skill-demand-2026-05-25/"],
-                ["3", "Workday. Workday Illuminate Expands with New AI Agents for HR, Finance, and Industry.", "https://newsroom.workday.com/2025-09-16-Workday-Illuminate-TM-Expands-with-New-AI-Agents-for-HR,-Finance,-and-Industry"],
-                ["4", "SAP News. SAP SuccessFactors Innovations: A New Era of Autonomous HCM.", "https://news.sap.com/2026/05/sap-successfactors-innovations-new-era-autonomous-hcm/"],
-                ["5", "Oracle. Oracle Helps Organizations Scale Effective Leadership with Oracle Manager Edge.", "https://www.oracle.com/news/announcement/oracle-helps-organizations-scale-effective-leadership-with-oracle-manager-edge-2026-06-30/"],
-                ["6", "Microsoft. Microsoft 365 Copilot, Human Agency, and the Opportunity for Every Organization.", "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/microsoft-365-copilot-human-agency-and-the-opportunity-for-every-organization/"],
-                ["7", "LinkedIn Talent Solutions. 2026 LinkedIn Hiring Release.", "https://tcommunity.linkedin.com/product-updates/2026-linkedin-hiring-release-2275"],
-                ["8", "IBM. Transforming HR Support with Agentic AI (AskHR).", "https://www.ibm.com/case-studies/ibm-askhr"],
-              ].map(([n, txt, url]) => (
-                <li key={n} id={`ref-${n}`} style={{ display: "flex", gap: "10px", marginBottom: "6px" }}>
-                  <span className="mono" style={{ color: "#B8894A", flexShrink: 0 }}>
-                    [{n}]
-                  </span>
-                  <span>
-                    {txt}{" "}
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="ref-link"
-                      style={{ display: "inline-flex", alignItems: "center", gap: "2px" }}
-                    >
-                      source <ArrowUpRight size={11} style={{ display: "inline" }} />
-                    </a>
-                  </span>
-                </li>
-              ))}
-            </ol>
-
           </div>
         </Reveal>
+        </div>
       </footer>
 
       <style>{`
@@ -1080,6 +1355,10 @@ export default function Newsletter() {
           .platform-row { grid-template-columns: 48px 1fr !important; }
           .platform-row > div:last-child:not(:nth-child(2)) { grid-column: 1 / -1; margin-top: 14px; }
           .case-grid { grid-template-columns: 1fr !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .footer-socials-col { align-items: flex-start !important; }
+          .masthead-row { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+          .masthead-title { text-align: left !important; }
         }
       `}</style>
     </div>
