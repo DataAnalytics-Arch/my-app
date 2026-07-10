@@ -481,7 +481,7 @@ export default function Newsletter() {
                 margin: 0,
               }}
             >
-              Artificial Intelligence is no longer just an emerging trend in HR. Organizations are embedding AI into recruitment, workforce planning, employee development, and everyday decision making — and HR is evolving from a support function into a strategic driver of workforce transformation.
+              Artificial Intelligence is no longer just an emerging trend in HR. As AI adoption accelerates across organizations, HR is evolving from a support function into a strategic driver of workforce transformation.
             </p>
           </Reveal>
         </div>
@@ -1209,7 +1209,7 @@ export default function Newsletter() {
                   }}
                 >
                   {[
-                    ["1", "Gartner. Build an HR Operating Model That Succeeds in the AI Era.", "#"],
+                    ["1", "Gartner. Build an HR Operating Model That Succeeds in the AI Era.", "https://www.gartner.com/en/articles/hr-operating-model"],
                     ["2", "Deloitte. 2026 Global Human Capital Trends.", "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html"],
                     ["3", "Deloitte India. State of AI in the Enterprise 2026: India Insights.", "https://www.deloitte.com/in/en/issues/generative-ai/state-of-ai-in-enterprise.html"],
                     ["4", "Deloitte Global. 2026 Gen Z and Millennial Survey – Country Profile: India.", "#"],
