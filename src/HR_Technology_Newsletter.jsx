@@ -410,6 +410,18 @@ export default function Newsletter() {
                 HR Insider
               </h1>
               <div
+                style={{
+                  fontSize: "clamp(10px, 1.1vw, 12px)",
+                  color: "#CBD5E1",
+                  fontWeight: 400,
+                  marginTop: "4px",
+                  lineHeight: 1.4,
+                  fontStyle: "italic",
+                }}
+              >
+                Curated intelligence for HR and technology leaders navigating the AI shift.
+              </div>
+              <div
                 className="mono"
                 style={{
                   fontSize: "clamp(9px, 1.2vw, 11px)",
@@ -421,6 +433,18 @@ export default function Newsletter() {
                 }}
               >
                 HR &amp; Technology Edition
+              </div>
+              <div
+                className="mono"
+                style={{
+                  fontSize: "clamp(8px, 1vw, 10px)",
+                  letterSpacing: "0.1em",
+                  color: "#64748B",
+                  fontWeight: 400,
+                  marginTop: "2px",
+                }}
+              >
+                Issue 01 &middot; June 2026
               </div>
             </div>
           </div>
@@ -464,24 +488,48 @@ export default function Newsletter() {
                 fontSize: "clamp(36px, 6vw, 72px)",
                 fontWeight: 700,
                 color: "#FFFFFF",
-                margin: "0 0 28px",
+                margin: "0 0 20px",
                 lineHeight: 1.08,
                 maxWidth: "760px",
               }}
             >
-              Exploring the trends shaping the{" "}
-              <span style={{ color: "#C4973A" }}>future of work</span>
+              Every HR platform now has{" "}
+              <span style={{ color: "#C4973A" }}>an AI story.</span>
             </h2>
             <p
               style={{
-                fontSize: "clamp(15px, 1.6vw, 17px)",
-                lineHeight: 1.75,
-                color: "#94A3B8",
-                maxWidth: "580px",
-                margin: 0,
+                fontSize: "clamp(16px, 1.8vw, 20px)",
+                lineHeight: 1.6,
+                color: "#CBD5E1",
+                maxWidth: "620px",
+                margin: "0 0 18px",
+                fontWeight: 500,
               }}
             >
-              Artificial Intelligence is no longer just an emerging trend in HR. As AI adoption accelerates across organizations, HR is evolving from a support function into a strategic driver of workforce transformation.
+              Not all of them are worth your time.
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(15px, 1.5vw, 17px)",
+                lineHeight: 1.8,
+                color: "#94A3B8",
+                maxWidth: "620px",
+                margin: "0 0 24px",
+              }}
+            >
+              This briefing cuts through the noise — what's actually in production, what's delivering measurable results, and where the real opportunities are for HR teams in 2026. We've done the research so you don't have to.
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(13px, 1.3vw, 15px)",
+                lineHeight: 1.7,
+                color: "#64748B",
+                maxWidth: "600px",
+                margin: 0,
+                fontStyle: "italic",
+              }}
+            >
+              Inside this edition: the platforms reshaping the HR function, four enterprise deployments with verified outcomes, and the key AI trends driving the future of HR.
             </p>
           </Reveal>
         </div>
@@ -534,7 +582,7 @@ export default function Newsletter() {
                 </div>
 
                 <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", margin: 0 }}>
-                  This global shift is especially visible in India, where Global Capability Centres (GCCs) are rapidly adopting AI across recruitment, workforce planning, and employee development to support growing business demands.{" "}
+                  This global shift is most visible in India, where organisations — and particularly Global Capability Centres — are moving faster than most markets to operationalise AI across the workforce. India is not catching up. In several areas, it is setting the pace.{" "}
                   <sup>
                     <button onClick={() => scrollToRef("ref-3")} className="ref-link">3</button>
                   </sup>
@@ -700,10 +748,21 @@ export default function Newsletter() {
                 borderTop: "1px solid rgba(255,255,255,0.08)"
               }}
             >
-              The growing adoption of AI is also reflected in the workforce. Deloitte's 2026 Gen Z and Millennial Survey found that 93% of Gen Z and 95% of millennials in India use AI in their day-to-day work. Employees are increasingly leveraging AI for learning and development, career guidance, and productivity, reinforcing HR's role in building AI-ready talent through continuous upskilling and responsible AI adoption.{" "}
+              Deloitte's 2026 Gen Z and Millennial Survey found that 93% of Gen Z and 95% of millennials in India already use AI in their day-to-day work — reinforcing HR's role in building AI-ready talent through structured upskilling and responsible adoption frameworks.{" "}
               <sup>
                 <button onClick={() => scrollToRef("ref-4")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>4</button>
               </sup>
+            </p>
+            <p
+              style={{
+                fontSize: "15px",
+                lineHeight: 1.75,
+                color: "#CBD5E1",
+                marginTop: "20px",
+                fontWeight: 500,
+              }}
+            >
+              For HR leaders in India, the question is no longer whether to adopt AI-enabled HR tools. It is which processes to transform first, and how quickly to build internal capability around them. The organisations that answer that question deliberately will retain and attract the talent that answers it for everyone else.
             </p>
             <p
               style={{
@@ -835,6 +894,21 @@ export default function Newsletter() {
               </div>
             ))}
           </div>
+        </Reveal>
+        <Reveal>
+          <p
+            style={{
+              fontSize: "15px",
+              lineHeight: 1.75,
+              color: "#475569",
+              textAlign: "center",
+              maxWidth: "720px",
+              margin: "24px auto 0",
+              fontStyle: "italic",
+            }}
+          >
+            These are not five separate investments. In the most advanced organisations, they function as one connected system – with AI running across all five layers simultaneously.
+          </p>
         </Reveal>
         </div>
       </section>
@@ -1147,6 +1221,56 @@ export default function Newsletter() {
             </Reveal>
           ))}
         </div>
+        </div>
+      </section>
+
+      {/* ============ CTA / CLOSING — light section ============ */}
+      <section style={{ background: "#F9F8F6", padding: "0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "72px 32px", textAlign: "center" }}>
+          <Reveal>
+            <p
+              style={{
+                fontSize: "clamp(15px, 1.5vw, 17px)",
+                lineHeight: 1.8,
+                color: "#475569",
+                maxWidth: "680px",
+                margin: "0 auto 36px",
+              }}
+            >
+              These are starting points, not the full picture. The right initiative for your organisation depends on your current platform, your workforce profile, and the business problem you are solving for. That is a conversation worth having.
+            </p>
+            <a
+              href="https://www.netscribes.com/contact/"
+              target="_blank"
+              rel="noreferrer"
+              id="cta-connect-specialist"
+              style={{
+                display: "inline-block",
+                background: "#C4973A",
+                color: "#FFFFFF",
+                fontSize: "15px",
+                fontWeight: 600,
+                padding: "14px 36px",
+                borderRadius: "8px",
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+                transition: "background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease",
+                boxShadow: "0 4px 16px rgba(196,151,58,0.35)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#B8862E";
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(196,151,58,0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#C4973A";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(196,151,58,0.35)";
+              }}
+            >
+              Connect with a Netscribes specialist
+            </a>
+          </Reveal>
         </div>
       </section>
 
