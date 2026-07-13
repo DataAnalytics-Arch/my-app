@@ -517,7 +517,7 @@ export default function Newsletter() {
                 margin: "0 0 24px",
               }}
             >
-              This briefing cuts through the noise — what's actually in production, what's delivering measurable results, and where the real opportunities are for HR teams in 2026. We've done the research so you don't have to.
+              This briefing cuts through the noise by focusing on what's actually in production, what's delivering measurable results, and where the real opportunities are for HR teams in 2026. We've done the research so you don't have to.
             </p>
             <p
               style={{
@@ -582,7 +582,7 @@ export default function Newsletter() {
                 </div>
 
                 <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", margin: 0 }}>
-                  This global shift is most visible in India, where organisations — and particularly Global Capability Centres — are moving faster than most markets to operationalise AI across the workforce. India is not catching up. In several areas, it is setting the pace.{" "}
+                  This global shift is most visible in India, where organizations, particularly Global Capability Centres (GCCs), are moving faster than most markets to operationalize AI across the workforce. India is not catching up. In several areas, it is setting the pace.{" "}
                   <sup>
                     <button onClick={() => scrollToRef("ref-3")} className="ref-link">3</button>
                   </sup>
@@ -748,7 +748,7 @@ export default function Newsletter() {
                 borderTop: "1px solid rgba(255,255,255,0.08)"
               }}
             >
-              Deloitte's 2026 Gen Z and Millennial Survey found that 93% of Gen Z and 95% of millennials in India already use AI in their day-to-day work — reinforcing HR's role in building AI-ready talent through structured upskilling and responsible adoption frameworks.{" "}
+              Deloitte's 2026 Gen Z and Millennial Survey found that 93% of Gen Z and 95% of millennials in India already use AI in their day-to-day work. This reinforces HR's role in building AI-ready talent through structured upskilling and responsible AI adoption frameworks.{" "}
               <sup>
                 <button onClick={() => scrollToRef("ref-4")} className="ref-link" style={{ color: "#C4973A", borderColor: "#C4973A" }}>4</button>
               </sup>
@@ -907,7 +907,7 @@ export default function Newsletter() {
               fontStyle: "italic",
             }}
           >
-            These are not five separate investments. In the most advanced organisations, they function as one connected system – with AI running across all five layers simultaneously.
+            These are not five separate investments. In the most advanced organizations, they function as one connected system, with AI operating across all five layers simultaneously.
           </p>
         </Reveal>
         </div>
@@ -1336,7 +1336,7 @@ export default function Newsletter() {
                     ["1", "Gartner. Build an HR Operating Model That Succeeds in the AI Era.", "https://www.gartner.com/en/articles/hr-operating-model"],
                     ["2", "Deloitte. 2026 Global Human Capital Trends.", "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html"],
                     ["3", "Deloitte India. State of AI in the Enterprise 2026: India Insights.", "https://www.deloitte.com/in/en/issues/generative-ai/state-of-ai-in-enterprise.html"],
-                    ["4", "Deloitte Global. 2026 Gen Z and Millennial Survey – Country Profile: India.", "#"],
+                    ["4", "Deloitte Global. 2026 Gen Z and Millennial Survey - Country Profile: India.", "https://www.deloitte.com/in/en/issues/work/genz-millenial-survey-india-2026.html"],
                     ["5", "Reuters. Global firms rethink GCC hiring in India as AI shifts skill demand. (May 25, 2026)", "https://www.reuters.com/world/india/global-firms-rethink-gcc-hiring-india-ai-shifts-skill-demand-2026-05-25/"],
                     ["6", "Workday. Workday Illuminate Expands with New AI Agents for HR, Finance, and Industry.", "https://newsroom.workday.com/2025-09-16-Workday-Illuminate-TM-Expands-with-New-AI-Agents-for-HR,-Finance,-and-Industry"],
                     ["7", "SAP News. SAP SuccessFactors Innovations: A New Era of Autonomous HCM.", "https://news.sap.com/2026/05/sap-successfactors-innovations-new-era-autonomous-hcm/"],
