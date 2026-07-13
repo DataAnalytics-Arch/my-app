@@ -444,7 +444,7 @@ export default function Newsletter() {
                   marginTop: "2px",
                 }}
               >
-                Issue 01 &middot; June 2026
+                Issue 01 &middot; July 2026
               </div>
             </div>
           </div>
@@ -549,11 +549,11 @@ export default function Newsletter() {
           >
             <Reveal>
               <div>
-                <p style={{ fontSize: "clamp(18px, 1.8vw, 22px)", lineHeight: 1.7, color: "#1E293B", fontWeight: 500, margin: "0 0 22px" }}>
+                <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", margin: "0 0 18px" }}>
                   Across the world, HR teams are redesigning how work gets done as Artificial Intelligence moves from automating routine tasks to becoming a genuine partner in decision-making.
                 </p>
                 <p style={{ fontSize: "15.5px", lineHeight: 1.8, color: "#475569", marginTop: "0", margin: "0 0 18px" }}>
-                  Organizations are moving beyond using AI simply to automate routine work. Instead, they are redesigning work so that people and AI collaborate more effectively, improving decision-making, adaptability, and overall workforce performance. Gartner predicts that by 2030, AI will automate or perform up to 50% of current HR activities, fundamentally transforming HR roles and workflows. As routine administrative tasks become increasingly automated, HR professionals can focus more on strategic workforce planning, employee experience, talent development, and business partnership.{" "}
+                  Gartner predicts that by 2030, AI will automate or perform up to 50% of current HR activities, fundamentally transforming HR roles and workflows. As routine administrative tasks become increasingly automated, HR professionals can focus more on strategic workforce planning, employee experience, talent development, and business partnership.{" "}
                   <sup>
                     <button onClick={() => scrollToRef("ref-1")} className="ref-link">1</button>, <button onClick={() => scrollToRef("ref-2")} className="ref-link">2</button>
                   </sup>
